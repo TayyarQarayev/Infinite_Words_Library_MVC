@@ -1,0 +1,29 @@
+﻿@page
+@model Infinity_Words_Razor_Temp.Pages.Categories.DeleteModel
+
+<form method="post">
+    <div class="border p-2 mt-4" style="border-radius:10px">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Category</h2>
+            <hr />
+        </div>
+        <div class="mb-4 row p-1">
+            <label asp-for="Category.Name"></label>
+            <input asp-for="Category.Name" type="text" disabled class="form-control" />
+        </div>
+        <div class="mb-4 row p-1">
+            <label asp-for="Category.DisplayOrder"></label>
+            <input asp-for="Category.DisplayOrder" type="number" disabled class="form-control" />
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-danger" style="width:100%;font-weight:700;">Delete</button>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-page="/categories/index" class="btn btn-secondary" style="width:100%;font-weight:700;">Back to list</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+

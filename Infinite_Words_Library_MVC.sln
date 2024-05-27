@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infinite_Words_Library_MVC", "Infinite_Words_Library_MVC\Infinite_Words_Library_MVC.csproj", "{70C5AD29-8B1E-46B2-983F-4B165195CE0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinite_Words_Library_MVC", "Infinite_Words_Library_MVC\Infinite_Words_Library_MVC.csproj", "{70C5AD29-8B1E-46B2-983F-4B165195CE0C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infinity_Words_Razor_Temp", "Infinity_Words_Razor_Temp\Infinity_Words_Razor_Temp.csproj", "{CF665C98-FAA4-4949-85C9-2E3B76679C39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{70C5AD29-8B1E-46B2-983F-4B165195CE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70C5AD29-8B1E-46B2-983F-4B165195CE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70C5AD29-8B1E-46B2-983F-4B165195CE0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF665C98-FAA4-4949-85C9-2E3B76679C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF665C98-FAA4-4949-85C9-2E3B76679C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF665C98-FAA4-4949-85C9-2E3B76679C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF665C98-FAA4-4949-85C9-2E3B76679C39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
