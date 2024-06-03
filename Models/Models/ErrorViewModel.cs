@@ -1,4 +1,4 @@
-namespace Infinite_Words_Library_MVC.Models
+namespace A.Models.Models
 {
     public class ErrorViewModel
     {

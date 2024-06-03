@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace Infinite_Words_Library_MVC.Models
+namespace A.Models.Models
 {
     public class Category
     {

@@ -1,7 +1,7 @@
-﻿using Infinite_Words_Library_MVC.Models;
+﻿using A.Models.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infinite_Words_Library_MVC.Data
+namespace A.DataAccessLayer.Data
 {
     public class ApplicationDbContext:DbContext
     {

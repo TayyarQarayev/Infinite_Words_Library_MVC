@@ -1,19 +1,20 @@
-﻿using Infinite_Words_Library_MVC.Data;
-using Infinite_Words_Library_MVC.Models;
+﻿using A.DataAccessLayer.Data;
+using A.DataAccessLayer.Repository.IRepository;
+using A.Models.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Infinite_Words_Library_MVC.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _db;
-        public CategoryController(ApplicationDbContext db)
+        private readonly ICategoryRepository _categoryRepo;
+        public CategoryController(ICategoryRepository db)
         {
-            _db = db;
+            _categoryRepo = db;
         }
         public IActionResult Index()
         {
-            List<Category> objCategoryList = _db.Catagories.ToList();
+            List<Category> objCategoryList = _categoryRepo.GetAll().ToList();
             return View(objCategoryList);
         }
         public IActionResult Create()
@@ -34,8 +35,8 @@ namespace Infinite_Words_Library_MVC.Controllers
             }
             if (ModelState.IsValid)
             {
-                _db.Catagories.Add(obj);
-                _db.SaveChanges();
+                _categoryRepo.Add(obj);
+                _categoryRepo.Save();
                 return RedirectToAction("Index");
             }
             return View();
@@ -47,7 +48,7 @@ namespace Infinite_Words_Library_MVC.Controllers
             {
                 return NotFound();
             }
-            Category categoryFromDb = _db.Catagories.Find(id);
+            Category categoryFromDb = _categoryRepo.Get(u => u.Id==id);
             //Category categoryFromDb1 = _db.Catagories.FirstOrDefault(u=>u.Id==id);
             //Category categoryFromDb2 = _db.Catagories.Where(u=>u.Id==id).FirstOrDefault();
             if (categoryFromDb == null) 
@@ -62,8 +63,8 @@ namespace Infinite_Words_Library_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Catagories.Update(obj);
-                _db.SaveChanges();
+                _categoryRepo.Update(obj);
+                _categoryRepo.Save();
                 return RedirectToAction("Index");
             }
             return View();
@@ -75,7 +76,7 @@ namespace Infinite_Words_Library_MVC.Controllers
             {
                 return NotFound();
             }
-            Category categoryFromDb = _db.Catagories.Find(id);
+            Category categoryFromDb = _categoryRepo.Get(u => u.Id == id);
             if (categoryFromDb == null)
             {
                 return NotFound();
@@ -86,13 +87,13 @@ namespace Infinite_Words_Library_MVC.Controllers
         [HttpPost,ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category obj = _db.Catagories.Find(id);
+            Category obj = _categoryRepo.Get(u => u.Id == id);
             if (obj == null)
             {
                 NotFound();
             }
-            _db.Catagories.Remove(obj);
-            _db.SaveChanges();
+            _categoryRepo.Remove(obj);
+            _categoryRepo.Save();
             return RedirectToAction("Index");
         }
     }

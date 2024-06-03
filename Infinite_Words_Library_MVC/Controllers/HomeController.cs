@@ -1,4 +1,4 @@
-using Infinite_Words_Library_MVC.Models;
+using A.Models.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
