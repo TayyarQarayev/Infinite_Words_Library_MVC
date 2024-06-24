@@ -2,8 +2,9 @@ using A.Models.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Infinite_Words_Library_MVC.Controllers
+namespace Infinite_Words_Library_MVC.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

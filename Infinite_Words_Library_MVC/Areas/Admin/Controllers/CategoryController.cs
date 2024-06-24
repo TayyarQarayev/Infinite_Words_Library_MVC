@@ -3,8 +3,9 @@ using A.DataAccessLayer.Repository.IRepository;
 using A.Models.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Infinite_Words_Library_MVC.Controllers
+namespace Infinite_Words_Library_MVC.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly ICategoryRepository _categoryRepo;
@@ -44,14 +45,14 @@ namespace Infinite_Words_Library_MVC.Controllers
 
         public IActionResult Edit(int? id)
         {
-            if (id is null || id==0)
+            if (id is null || id == 0)
             {
                 return NotFound();
             }
-            Category categoryFromDb = _categoryRepo.Get(u => u.Id==id);
+            Category categoryFromDb = _categoryRepo.Get(u => u.Id == id);
             //Category categoryFromDb1 = _db.Catagories.FirstOrDefault(u=>u.Id==id);
             //Category categoryFromDb2 = _db.Catagories.Where(u=>u.Id==id).FirstOrDefault();
-            if (categoryFromDb == null) 
+            if (categoryFromDb == null)
             {
                 return NotFound();
             }
@@ -84,7 +85,7 @@ namespace Infinite_Words_Library_MVC.Controllers
             return View(categoryFromDb);
         }
 
-        [HttpPost,ActionName("Delete")]
+        [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
             Category obj = _categoryRepo.Get(u => u.Id == id);
