@@ -46,7 +46,7 @@ namespace A.DataAccessLayer.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Product",
+                table: "Products",
                 columns: new[] { "Id", "Author", "Description", "ISBN", "ListPrice", "Price", "Price100", "Price50", "Title" },
                 values: new object[,]
                 {

@@ -16,6 +16,7 @@ namespace A.DataAccessLayer.Repository
         {
             _db = db;
         }
+
         public void Save()
         {
             _db.SaveChanges();
